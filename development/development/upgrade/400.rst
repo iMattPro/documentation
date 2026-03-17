@@ -15,19 +15,20 @@ Basics
 
 PHP
 ---
-phpBB 4.0 requires PHP 8.1 or higher. Most PHP code compatible with phpBB 3.3 should work in phpBB 4.0 with minimal changes,
+phpBB 4.0 requires PHP 8.2 or higher. Most PHP code compatible with phpBB 3.3 should work in phpBB 4.0 with minimal changes,
 but you may need to make adjustments depending on deprecated or changed functionality.
 
 Symfony
 -------
-phpBB 4.0 uses Symfony 6.4, a significant upgrade from the version bundled with phpBB 3.3. As Symfony introduced breaking
+phpBB 4.0 uses Symfony 7.4, a significant upgrade from the version bundled with phpBB 3.3. As Symfony introduced breaking
 changes across versions, we recommend reviewing the following Symfony upgrade guides when updating custom code or extensions:
 
 - `Upgrade Symfony from 3.x to 4.0 <https://github.com/symfony/symfony/blob/4.4/UPGRADE-4.0.md>`_
 - `Upgrade Symfony from 4.4 to 5.0 <https://github.com/symfony/symfony/blob/5.4/UPGRADE-5.0.md>`_
 - `Upgrade Symfony from 5.x to 6.0 <https://github.com/symfony/symfony/blob/6.4/UPGRADE-6.0.md>`_
+- `Upgrade Symfony from 6.x to 7.0 <https://github.com/symfony/symfony/blob/7.4/UPGRADE-7.0.md>`_
 
-Additional guides are available in the `Symfony GitHub repository <https://github.com/symfony/symfony/tree/6.4>`_.
+Additional guides are available in the `Symfony GitHub repository <https://github.com/symfony/symfony/tree/7.4>`_.
 
 Twig
 ----
