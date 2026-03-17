@@ -57,6 +57,33 @@ All Jabber/XMPP features have been removed in phpBB 4.0:
 
 This removal was driven by lack of browser support for XMPP and limited adoption within the phpBB community.
 
+Front Controller Changes
+========================
+
+In phpBB 4.0, the front controller used for Symfony routing has been changed
+from ``app.php`` to ``index.php``.
+
+In phpBB 3.3.x, routes were accessed via ``app.php``::
+
+    /app.php/faq
+
+In phpBB 4.0, routes are now accessed via ``index.php``::
+
+    /index.php/faq
+
+Direct access via ``app.php`` is no longer supported. Extensions and external
+integrations must use ``index.php``.
+
+Extensions using phpBB routing helpers (for example,
+``controller_helper::route()``) do not require changes, as URLs will be
+generated correctly.
+
+However, any hardcoded references to ``app.php`` must be updated. This includes:
+
+- Template files
+- PHP code constructing URLs manually
+- JavaScript referencing application routes
+
 Class and function changes
 ==========================
 Several classes and functions have been changed or removed. If your extension or code uses phpBB internals, you’ll want to:
