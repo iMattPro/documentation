@@ -15,19 +15,20 @@ Basics
 
 PHP
 ---
-phpBB 4.0 requires PHP 8.1 or higher. Most PHP code compatible with phpBB 3.3 should work in phpBB 4.0 with minimal changes,
+phpBB 4.0 requires PHP 8.2 or higher. Most PHP code compatible with phpBB 3.3 should work in phpBB 4.0 with minimal changes,
 but you may need to make adjustments depending on deprecated or changed functionality.
 
 Symfony
 -------
-phpBB 4.0 uses Symfony 6.4, a significant upgrade from the version bundled with phpBB 3.3. As Symfony introduced breaking
+phpBB 4.0 uses Symfony 7.4, a significant upgrade from the version bundled with phpBB 3.3. As Symfony introduced breaking
 changes across versions, we recommend reviewing the following Symfony upgrade guides when updating custom code or extensions:
 
 - `Upgrade Symfony from 3.x to 4.0 <https://github.com/symfony/symfony/blob/4.4/UPGRADE-4.0.md>`_
 - `Upgrade Symfony from 4.4 to 5.0 <https://github.com/symfony/symfony/blob/5.4/UPGRADE-5.0.md>`_
 - `Upgrade Symfony from 5.x to 6.0 <https://github.com/symfony/symfony/blob/6.4/UPGRADE-6.0.md>`_
+- `Upgrade Symfony from 6.x to 7.0 <https://github.com/symfony/symfony/blob/7.4/UPGRADE-7.0.md>`_
 
-Additional guides are available in the `Symfony GitHub repository <https://github.com/symfony/symfony/tree/6.4>`_.
+Additional guides are available in the `Symfony GitHub repository <https://github.com/symfony/symfony/tree/7.4>`_.
 
 Twig
 ----
@@ -56,6 +57,33 @@ All Jabber/XMPP features have been removed in phpBB 4.0:
 - Users who previously used Jabber/XMPP will now receive notifications via email.
 
 This removal was driven by lack of browser support for XMPP and limited adoption within the phpBB community.
+
+Front Controller Changes
+========================
+
+In phpBB 4.0, the front controller used for Symfony routing has been changed
+from ``app.php`` to ``index.php``.
+
+In phpBB 3.3.x, routes were accessed via ``app.php``::
+
+    /app.php/faq
+
+In phpBB 4.0, routes are now accessed via ``index.php``::
+
+    /index.php/faq
+
+Direct access via ``app.php`` is no longer supported. Extensions and external
+integrations must use ``index.php``.
+
+Extensions using phpBB routing helpers (for example,
+``controller_helper::route()``) do not require changes, as URLs will be
+generated correctly.
+
+However, any hardcoded references to ``app.php`` must be updated. This includes:
+
+- Template files
+- PHP code constructing URLs manually
+- JavaScript referencing application routes
 
 Class and function changes
 ==========================
