@@ -74,10 +74,7 @@ The easiest way to use the Skeleton Extension is from its web-based user
 interface (UI).
 
 .. image:: images/skeleton-web-ui.png
-    :width: 200px
-    :align: center
-    :height: 100px
-    :alt: alternate text
+    :width: 500px
 
 In order to create an extension via the web UI, open the phpBB board you
 installed this extension in and visit the "Create skeleton extension" link in the
@@ -96,6 +93,9 @@ Command line interface
 
 The Skeleton Extension can also accommodate users that prefer working
 from a Command Line Interface (CLI).
+
+.. image:: images/skeleton-cli.png
+    :width: 500px
 
 In order to create an extension via the CLI, you need to open a console
 on your server and ``cd`` to the root directory of the phpBB board where
